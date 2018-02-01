@@ -28,7 +28,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  vuem:['geturl'],
+  vuem:['geturl','getapi'],
   methods:{
     getapi(){
             $http.getTeacher({},{id:8730}).then(res=>{
@@ -44,8 +44,9 @@ export default {
     }
   },
   mounted(){
-
-    this.$http.geturl({},{id:8730})
+    // console.log(this.$http)
+      this.$http.getapi()
+    // this.$http.geturl({},{id:8730})
     // setTimeout(res=>this.getapi(),1)
     // setTimeout(res=>this.getapi(),2)
     // setTimeout(res=>this.getapi(),3)

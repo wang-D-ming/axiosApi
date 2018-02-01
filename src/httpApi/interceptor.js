@@ -2,14 +2,13 @@ import $qs  from 'qs'
 
 export default function install(Vue){
 
-	// $axios.defaults.headers.common['Authorization'] = 'Authorization'
+	$axios.defaults.headers.common['If-Modified-Since'] = '0'
 	
 	//是否用formdata格式请求
 	// $axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 	// $axios.defaults.transformRequest =[data=>{
 	// 	return $qs.stringify(data)
 	// }];
-	
 	$axios.defaults.timeout =6000;
 	let CancelToken=$axios.CancelToken;
 	let requests={};
@@ -32,7 +31,8 @@ export default function install(Vue){
 	})
 
 	$axios.interceptors.response.use(response=>{
-		if(response.data.code==='000000'){
+		console.log(response)
+		if(response.data.code==='200'){
 			return response.data
 		}else{
 			return Promise.reject(response.data);

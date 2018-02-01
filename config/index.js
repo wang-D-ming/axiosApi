@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-            // '/api': {
-            //     target: 'http://yunketang.mofangge.net:8080',
-            //     secure: false,
-            //     changeOrigin: true
-            // }
+            '/ajax': {
+                target: 'http://localhost:3000',
+                secure: false,
+                changeOrigin: true
+            }
     },
 
     // Various Dev Server settings

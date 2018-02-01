@@ -33,7 +33,7 @@ export default function install(Vue,lazy=false){
 	       				httpapi.filter(i=>~this.$options.vuem.indexOf(i.vuem)).forEach(ajax=>{
 							if(~getAip.indexOf(ajax.method)){
 								this.$http[ajax.vuem] = (params={},configs={})=>{
-									 const config=Object.assign({},ajaxajax,configs,{params})
+									 const config=Object.assign({},ajax,configs,{params})
 									 return paramsSerializer(config)	
 								}
 							}else{

@@ -8,8 +8,8 @@ import httpaopApi  from './httpApi'
 
 Vue.config.productionTip = false
 Window.prototype.$axios=axios
-$axios.defaults.baseURL='./api/perfect'
-
+// $axios.defaults.baseURL='./api/perfect'
+$axios.defaults.baseURL="./"
 
 /**
  * httpaopApi 
