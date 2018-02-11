@@ -28,29 +28,12 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  vuem:['getTeacher'],
+
   methods:{
-    getapi(){
-            $http.getTeacher({},{id:8730}).then(res=>{
-              console.log(res)
-            },rej=>console.log(rej)) 
-   
-                     
-    },
-    setapi(){
-            $http.geturl({},{id:8730}).then(res=>{
-              console.log(res)
-            }) 
-    }
+
   },
   mounted(){
-    this.$http.getTeacher({},{id:8730})
-    // setTimeout(res=>this.getapi(),1)
-    // setTimeout(res=>this.getapi(),2)
-    // setTimeout(res=>this.getapi(),3)
-    // setTimeout(res=>this.setapi(),1)
-    // setTimeout(res=>this.setapi(),2)
-    // setTimeout(res=>this.setapi(),3)
+
   }
 }
 </script>

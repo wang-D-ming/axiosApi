@@ -15,8 +15,8 @@ export default function install(Vue){
 	 // console.log($axios.CancelToken)
 	 // var CancelToken = $axios.CancelToken.source();
 	$axios.interceptors.request.use(config=>{ 
-
-		config.header.common['token']='token' //设置时时token
+		
+		config.headers.common['token']='token' //设置时时token
 
 		if(config.vuem && requests[config.vuem]){//拦截重复的且未完成的请求
 			requests[config.vuem]('网络繁忙')		
@@ -34,6 +34,7 @@ export default function install(Vue){
 	})
 
 	$axios.interceptors.response.use(response=>{
+		delete  requests[response.config.vuem];//删除请求成功的属性
 		if(response.data.code==='200'){//后台人员约定的成果的参数
 			return response.data
 		}else{
@@ -41,7 +42,6 @@ export default function install(Vue){
 		}
 		
 	},(err)=>{
-		alert(err.message)
 		if($axios.isCancel(err)){	
 			return new Promise(()=>{}) //是否会引起内存泄漏呢？
 		}else{
